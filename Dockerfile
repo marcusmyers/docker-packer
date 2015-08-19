@@ -20,7 +20,7 @@ RUN mkdir /tmp/packer \
 VOLUME /app
 
 # Default command.
-CMD ["packer"]
+CMD [ "/usr/local/bin/packer" ]
 
 
 
