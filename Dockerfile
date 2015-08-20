@@ -13,11 +13,9 @@ RUN mkdir /tmp/packer \
     && apk del curl unzip \
     && mv packer* /usr/local/bin \
     && cd \
-    && rm -rf /tmp/packer \
-    && mkdir /app \
-    && cd /app
+    && rm -rf /tmp/packer
 
-VOLUME /app
+WORKDIR /app
 
 # Default command.
 CMD [ "/usr/local/bin/packer" ]
