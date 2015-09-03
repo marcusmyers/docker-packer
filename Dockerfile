@@ -19,4 +19,4 @@ VOLUME /app
 WORKDIR /app
 
 # DEFAULT COMMAND.
-CMD [ "packer" ]
+CMD [ "/usr/local/bin/packer" ]
