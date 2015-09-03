@@ -12,13 +12,10 @@ RUN mkdir /tmp/packer \
     && rm packer_${PACKER_VERSION}_linux_amd64.zip \
     && apk del curl unzip \
     && mv packer* /usr/local/bin \
-    && cd \
+#    && mkdir /app \
     && rm -rf /tmp/packer
 
 WORKDIR /app
 
 # Default command.
-CMD [ "/usr/local/bin/packer" ]
-
-
-
+ENTRYPOINT [ "/usr/local/bin/packer" ]
