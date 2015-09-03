@@ -15,7 +15,9 @@ RUN mkdir /tmp/packer \
 #    && mkdir /app \
     && rm -rf /tmp/packer
 
-WORKDIR /app
+VOLUME /app
 
-# Default command.
-ENTRYPOINT [ "/usr/local/bin/packer" ]
+WORKDIR /APP
+
+# DEFAULT COMMAND.
+ENTRYPOINT [ "/USR/LOCAL/BIN/PACKER" ]
