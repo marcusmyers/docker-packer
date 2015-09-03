@@ -19,4 +19,4 @@ VOLUME /app
 WORKDIR /app
 
 # DEFAULT COMMAND.
-CMD [ "/usr/local/bin/packer" ]
+ENTRYPOINT [ "/usr/local/bin/packer" ]
