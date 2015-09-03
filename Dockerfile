@@ -1,7 +1,7 @@
 FROM gliderlabs/alpine
 MAINTAINER Mark Myers <marcusmyers@gmail.com>
 
-ENV PACKER_VERSION 0.8.5
+ENV PACKER_VERSION 0.8.6
 
 RUN apk-install curl unzip
 
@@ -12,12 +12,11 @@ RUN mkdir /tmp/packer \
     && rm packer_${PACKER_VERSION}_linux_amd64.zip \
     && apk del curl unzip \
     && mv packer* /usr/local/bin \
-#    && mkdir /app \
+    && rm -rf /var/cache/apk/* \
     && rm -rf /tmp/packer
 
 VOLUME /app
-
-WORKDIR /APP
+WORKDIR /app
 
 # DEFAULT COMMAND.
-ENTRYPOINT [ "/USR/LOCAL/BIN/PACKER" ]
+CMD [ "packer" ]
